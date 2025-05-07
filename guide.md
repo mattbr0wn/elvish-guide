@@ -773,19 +773,19 @@ Marked task #0 as done
 Well-organized `~/.config/elvish/rc.elv`:
 
 ```elvish
-# === Environment Setup ===
-set E:EDITOR = "vim"
-set E:PAGER = "less"
-set E:PATH = [
-  $@E:PATH
-  ~/bin
-  ~/.local/bin
-]
-
 # === Module Imports ===
 use str
 use path
 use math
+
+# === Environment Setup ===
+set E:EDITOR = "vim"
+set E:PAGER = "less"
+set E:PATH = (str:join : [
+  $E:PATH
+  ~/bin
+  ~/.local/bin
+]
 
 # === Aliases & Helper Functions ===
 fn l { ls -la $@ }
